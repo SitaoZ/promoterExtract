@@ -11,12 +11,12 @@ class Parameter():
         self._parser.add_argument('-f', '--genome', type=str, help='genome fasta')
         self._parser.add_argument('-g', '--gff', type=str, help='genome annotation file')
         self._parser.add_argument('-o', '--output', type=str, help = 'output csv file path')
-        self._parser.add_argument('-v', '--version', help = 'epip version information', action = "store_true")
+        self._parser.add_argument('-v', '--version', help = 'promoterExtract version information', action = "store_true")
 
         args = self._parser.parse_args()
 
         if args.version:
-            print("promorerExtract version 0.9")
+            print("promorerExtract version 0.9.1")
             exit(1)
 
         self.length = args.length
