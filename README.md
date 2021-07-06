@@ -10,9 +10,5 @@ Package pipe is a pipeline of frequently-used.
 
 1. **Install** <br>
     ```bash
-    tar -zxvf Python-3.6.1.tgz
-    cd Python-3.6.1
-    ./configure
-    make && make install
-    git clone https://github.com/zhusitao1990/ngs-tools.git
+    git clone https://github.com/zhusitao1990/promoterExtract.git
     ```
