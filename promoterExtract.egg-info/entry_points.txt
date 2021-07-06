@@ -1,0 +1,3 @@
+[console_scripts]
+get_promoter = promoterExtract.command_line:main
+
