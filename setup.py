@@ -8,7 +8,7 @@ def readme():
 from setuptools import setup 
 setup(
     name='promoterExtract',
-    version='0.9.2',
+    version='0.9.3',
     keywords='promoter',
     description='Extract promoter sequence for biologists',
     long_description_content_type='text/markdown',
@@ -16,7 +16,7 @@ setup(
     entry_points = {'console_scripts': ['get_promoter=promoterExtract.command_line:main']},
     author='zhusitao',
     author_email='zhusitao1990@163.com',
-    url='https://github.com/zhusitao1990',
+    url='https://github.com/SitaoZ/promoterExtract.git',
     include_package_data=True,
     packages=['promoterExtract'],
     license='MIT',

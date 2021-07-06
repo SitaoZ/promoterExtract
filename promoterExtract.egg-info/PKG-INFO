@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: promoterExtract
-Version: 0.9.2
+Version: 0.9.3
 Summary: Extract promoter sequence for biologists
-Home-page: https://github.com/zhusitao1990
+Home-page: https://github.com/SitaoZ/promoterExtract.git
 Author: zhusitao
 Author-email: zhusitao1990@163.com
 License: MIT
