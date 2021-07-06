@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: promoterExtract
-Version: 0.9.1
+Version: 0.9.2
 Summary: Extract promoter sequence for biologists
 Home-page: https://github.com/zhusitao1990
 Author: zhusitao
@@ -29,8 +29,12 @@ Description: # Overview
             ```bash
             which get_promoter
             get_promoter -h 
+            ```
+        
+            ```bash
             get_promoter -l 200 -u 100 -f ath.fa -g ath.gff3 -o promoter.csv
             ```
+            
         
 Keywords: promoter
 Platform: UNKNOWN

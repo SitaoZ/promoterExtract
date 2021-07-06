@@ -16,7 +16,7 @@ class Parameter():
         args = self._parser.parse_args()
 
         if args.version:
-            print("promorerExtract version 0.9.1")
+            print("promorerExtract version 0.9.2")
             exit(1)
 
         self.length = args.length
