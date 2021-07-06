@@ -54,7 +54,7 @@ def get_promoter(promoter_length, utr_head_length, genome_path, gff_path, outdir
         p_end_in_genome = p_end
         promoter_seq.loc[index] = [geneid,chrom,p_start_in_genome,p_end_in_genome,strand,promoter]
         index += 1
-    return promoter
+    return promoter_seq
     #promoter_seq.to_csv('{}/promoter_seq_position_{}_{}.csv'.format(outdir,promoter_length, utr_head_length),index=False)
 
 if __name__ == '__main__':

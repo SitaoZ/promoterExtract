@@ -10,5 +10,8 @@ Package pipe is a pipeline of frequently-used.
 
 1. **Install** <br>
     ```bash
+    pip install promoterExtract
+    or 
     git clone https://github.com/zhusitao1990/promoterExtract.git
+    python setup.py 
     ```
