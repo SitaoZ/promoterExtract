@@ -77,7 +77,9 @@ parser_extract.add_argument('-o', '--output', type=str, help = 'output csv file 
 parser_extract.add_argument('-v', '--version', help = 'promoterExtract version', action = "store_true")
 parser_extract.set_defaults(func=extract)
 args = parser.parse_args()
+print('runing ...')
 args.func(args)
+print('finished ...')
 
 
 
