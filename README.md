@@ -1,6 +1,9 @@
 # Overview
 
 The promoterExtract is python package for bioinformatics. 
+The packages contains two subcommands.
+The create subcommand is used for creating database and
+extract subcomand is used for extracting promoter sequence.
 Argument -l means the length of promoter, int type.
 Argument -u utr5 after TSS, int type.
 Argument -f reference genome fasta of a specific organism.
@@ -21,23 +24,40 @@ Argument -o means output file path.
     ```bash
     which get_promoter
     get_promoter -h 
-    
-    usage: get_promoter [-h] [-l LENGTH] [-u UTR_HEAD]
-           [-f GENOME] [-g GFF] [-o OUTPUT] [-v]
+        Program:  get_promoter (pipeline for promoter extract)
+        Version:  0.9.4
+        Contact:  Sitao Zhu <zhusitao1990@163.com>
+        Usage  :  get_promoter <command>
+        Command: 
+             create     create database for GTF or GFF
+             extract    extract promoter for genome or gene
+    get_promoter create -h 
+        usage: get_promoter create [-h] [-g GFF]
 
-     optional arguments:
-        -h, --help           show this help message and exit
-        -l LENGTH, --length LENGTH
+        optional arguments:
+            -h, --help         show this help message and exit
+            -g GFF, --gff GFF  genome annotation file
+    get_promoter extract -h 
+        usage: get_promoter extract [-h] [-l LENGTH] [-u UTR_HEAD] [-f GENOME]
+                                    [-o OUTPUT] [-v]
+
+    optional arguments:
+       -h, --help            show this help message and exit
+       -l LENGTH, --length LENGTH
                              promoter length before TSS
-        -u UTR_HEAD, --utr_head UTR_HEAD
+       -u UTR_HEAD, --utr_head UTR_HEAD
                              length after TSS
-        -f GENOME, --genome GENOME
+       -f GENOME, --genome GENOME
                              genome fasta
-        -g GFF, --gff GFF    genome annotation file
-        -o OUTPUT, --output OUTPUT
+       -o OUTPUT, --output OUTPUT
                              output csv file path
-        -v, --version        promoterExtract version information
-    
-    get_promoter -l 200 -u 100 -f ath.fa -g ath.gff3 -o promoter.csv
+       -v, --version         promoterExtract version
+    ```
+
+    ```bash
+    # step 1 
+    get_promoter create -g ath.gff3 
+    # step 2
+    get_promoter -l 200 -u 100 -f ath.fa -o promoter.csv
     ```
     

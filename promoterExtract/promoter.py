@@ -6,8 +6,8 @@ from Bio.SeqRecord import SeqRecord
 import argparse
 
 
-def create_db(gff_path):
-    fn =  gff_path # gffutils.example_filename(gff_path)
+def create(args):
+    fn = args.gff # gffutils.example_filename(gff_path)
     db = gffutils.create_db(fn, dbfn='gff.db', force=True, keep_order=True,\
         disable_infer_genes=True, disable_infer_transcripts=True,\
         merge_strategy='merge', sort_attribute_values=True)
@@ -27,9 +27,15 @@ def get_utr3(db, gene):
     pass
 
 
-def get_promoter(promoter_length, utr_head_length, genome_path, gff_path, outdir):
+def extract(args):
+    promoter_length = args.length
+    utr_head_length = args.utr_head
+    genome_path = args.genome
+    gff_path = args.gff
+    outdir = args.outdir
     genome = genome_dict(genome_path)
-    db = create_db(gff_path)
+    #db = create_db(gff_path)
+    db = gffutils.FeatureDB('gff.db', keep_order=True)
     index = 0
     promoter_seq = pd.DataFrame(columns=['GeneID','Chrom','Start','End','Strand','Promoter'])
     for f in db.all_features(featuretype='gene', order_by="seqid"):
@@ -55,8 +61,27 @@ def get_promoter(promoter_length, utr_head_length, genome_path, gff_path, outdir
         promoter_seq.loc[index] = [geneid,chrom,p_start_in_genome,p_end_in_genome,strand,promoter]
         index += 1
     return promoter_seq
-    #promoter_seq.to_csv('{}/promoter_seq_position_{}_{}.csv'.format(outdir,promoter_length, utr_head_length),index=False)
 
+parser = argparse.ArgumentParser()
+subparsers = parser.add_subparsers(help='sub-command help')
+# create subcommand 
+parser_create = subparsers.add_parser('create', help='create annotation database')
+parser_create.add_argument('-g', '--gff', type=str, help='genome annotation file')
+parser_create.set_defaults(func=create)
+# extract subcommand
+parser_extract = subparsers.add_parser('extract', help='extract promoter in genome or gene')
+parser_extract.add_argument('-l', '--length', type=int, help='promoter length before TSS')
+parser_extract.add_argument('-u', '--utr_head', type=int, help='utr5 length after TSS')
+parser_extract.add_argument('-f', '--genome', type=str, help='genome fasta')
+parser_extract.add_argument('-o', '--output', type=str, help = 'output csv file path')
+parser_extract.add_argument('-v', '--version', help = 'promoterExtract version', action = "store_true")
+parser_extract.set_defaults(func=extract)
+args = parser.parse_args()
+args.func(args)
+
+
+
+'''
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-l', '--length', type=int, help='promoter length before TSS')
@@ -66,4 +91,4 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--outdir', type=str, help='output directory')
     args = parser.parse_args()
     get_promoter(args.length, args.utr_head, args.genome, args.gff, args.outdir)
-                                                
+'''                                             
