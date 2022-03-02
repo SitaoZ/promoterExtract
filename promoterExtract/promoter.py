@@ -31,10 +31,10 @@ def extract(args):
     promoter_length = args.length
     utr_head_length = args.utr_head
     genome_path = args.genome
-    gff_path = args.gff
+    gff_db_path = args.gff
     outdir = args.outdir
     genome = genome_dict(genome_path)
-    #db = create_db(gff_path)
+    # db = create_db(gff_path)
     db = gffutils.FeatureDB('gff.db', keep_order=True)
     index = 0
     promoter_seq = pd.DataFrame(columns=['GeneID','Chrom','Start','End','Strand','Promoter'])
@@ -71,6 +71,7 @@ parser_create.set_defaults(func=create)
 # extract subcommand
 parser_extract = subparsers.add_parser('extract', help='extract promoter in genome or gene')
 parser_extract.add_argument('-l', '--length', type=int, help='promoter length before TSS')
+parser_extract.add_argument('-g', '--gff', type=str, help='gff binary database created before')
 parser_extract.add_argument('-u', '--utr_head', type=int, help='utr5 length after TSS')
 parser_extract.add_argument('-f', '--genome', type=str, help='genome fasta')
 parser_extract.add_argument('-o', '--output', type=str, help = 'output csv file path')

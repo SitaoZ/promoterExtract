@@ -45,6 +45,8 @@ Argument -o means output file path.
        -h, --help            show this help message and exit
        -l LENGTH, --length LENGTH
                              promoter length before TSS
+       -g GFF,    --gff GFF
+                             gff binary database created before
        -u UTR_HEAD, --utr_head UTR_HEAD
                              length after TSS
        -f GENOME, --genome GENOME
@@ -58,6 +60,6 @@ Argument -o means output file path.
     # step 1 
     get_promoter create -g ath.gff3 
     # step 2
-    get_promoter -l 200 -u 100 -f ath.fa -o promoter.csv
+    get_promoter extract -l 200 -u 100 -f ath.fa -o promoter.csv
     ```
     
