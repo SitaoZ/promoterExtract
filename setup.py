@@ -8,7 +8,7 @@ def readme():
 from setuptools import setup 
 setup(
     name='promoterExtract',
-    version='0.9.5.1',
+    version='0.9.5.6',
     keywords='promoter',
     description='Extract promoter sequence for biologists',
     long_description_content_type='text/markdown',

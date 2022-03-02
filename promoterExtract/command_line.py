@@ -9,7 +9,7 @@ def sub_usage(args):
 
 def main_usage():
     print("\n\033[1;33;40mProgram: \033[0m\033[1;35;40m get_promoter \033[1;31;40m(pipeline for promoter extract)\033[0m")
-    print("\033[1;33;40mVersion: \033[0m\033[1;32;40m 0.9.5.1\033[0m")
+    print("\033[1;33;40mVersion: \033[0m\033[1;32;40m 0.9.5.6\033[0m")
     print("\033[1;33;40mContact: \033[0m\033[1;32;40m Sitao Zhu <zhusitao1990@163.com>\033[0m")
     print("\033[1;33;40mUsage  : \033[0m\033[1;35;40m get_promoter\033[0m \033[1;31;40m<command>\033[0m")
     print("\033[1;33;40mCommand: \033[0m")

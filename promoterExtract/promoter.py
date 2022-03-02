@@ -32,7 +32,7 @@ def extract(args):
     utr_head_length = args.utr_head
     genome_path = args.genome
     gff_db_path = args.gff
-    outdir = args.outdir
+    output_file = args.output
     genome = genome_dict(genome_path)
     # db = create_db(gff_path)
     db = gffutils.FeatureDB(gff_db_path, keep_order=True)
@@ -60,7 +60,7 @@ def extract(args):
         p_end_in_genome = p_end
         promoter_seq.loc[index] = [geneid,chrom,p_start_in_genome,p_end_in_genome,strand,promoter]
         index += 1
-    return promoter_seq
+    promoter_seq.to_csv(output_file, sep=',', index=False)
 
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers(help='sub-command help')
