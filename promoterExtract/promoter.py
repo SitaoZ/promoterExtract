@@ -35,7 +35,7 @@ def extract(args):
     outdir = args.outdir
     genome = genome_dict(genome_path)
     # db = create_db(gff_path)
-    db = gffutils.FeatureDB('gff.db', keep_order=True)
+    db = gffutils.FeatureDB(gff_db_path, keep_order=True)
     index = 0
     promoter_seq = pd.DataFrame(columns=['GeneID','Chrom','Start','End','Strand','Promoter'])
     for f in db.all_features(featuretype='gene', order_by="seqid"):
