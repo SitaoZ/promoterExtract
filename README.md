@@ -25,7 +25,7 @@ Argument -o means output file path.
     which get_promoter
     get_promoter -h 
         Program:  get_promoter (pipeline for promoter extract)
-        Version:  0.9.4
+        Version:  0.9.5.7
         Contact:  Sitao Zhu <zhusitao1990@163.com>
         Usage  :  get_promoter <command>
         Command: 

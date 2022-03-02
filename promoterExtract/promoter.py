@@ -44,10 +44,10 @@ def extract(args):
         strand = f.strand
         if f.strand == "+":
             gene_seq = f.sequence(genome_path, use_strand=True)
-            p_start = f.start - int(promoter_length)
+            p_start = f.start - int(promoter_length) - 1
             if p_start < 0 :
                 continue
-            p_end = f.start + utr_head_length
+            p_end = f.start + utr_head_length - 1
             promoter = genome[f.chrom][p_start:p_end]
             # print(promoter)
         elif f.strand == "-":
