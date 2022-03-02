@@ -60,6 +60,6 @@ Argument -o means output file path.
     # step 1 
     get_promoter create -g ath.gff3 
     # step 2
-    get_promoter extract -l 200 -u 100 -f ath.fa -o promoter.csv
+    get_promoter extract -l 200 -u 100 -f ath.fa -g gff.db -o promoter.csv
     ```
     
