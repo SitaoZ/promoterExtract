@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: promoterExtract
-Version: 0.9.5.7
+Version: 0.9.5.8
 Summary: Extract promoter sequence for biologists
 Home-page: https://github.com/SitaoZ/promoterExtract.git
 Author: zhusitao
@@ -12,10 +12,11 @@ Description-Content-Type: text/markdown
 
 # Overview
 
-The promoterExtract is python package for bioinformatics. 
-The packages contains two subcommands.
-The create subcommand is used for creating database and
-extract subcomand is used for extracting promoter sequence.
+The promoterExtract is python package for nucleotide manipulation 
+in bioinformatics. The package contains two subcommands including 
+create and extract. The create subcommand is used for creating 
+database and extract subcomand is used for extracting promoter sequence.
+Both two subcomand is executed through get_promoter command in command line.
 Argument -l means the length of promoter, int type.
 Argument -u utr5 after TSS, int type.
 Argument -f reference genome fasta of a specific organism.
